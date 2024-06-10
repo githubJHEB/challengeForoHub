@@ -1,7 +1,6 @@
-package alura.reto.forohub.Topico;
+package alura.reto.forohub.domain.Topico;
 
 import jakarta.persistence.*;
-import jdk.jfr.Name;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;

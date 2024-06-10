@@ -1,4 +1,4 @@
-package alura.reto.forohub.Topico;
+package alura.reto.forohub.domain.Topico;
 
 public record DatosListadoTopico(Long id, String titulo, String mensaje, String fechacreacion, String status, String autor, String curso) {
 

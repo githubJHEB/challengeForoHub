@@ -1,4 +1,4 @@
-package alura.reto.forohub.Topico;
+package alura.reto.forohub.domain.Topico;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
