@@ -1,4 +1,4 @@
-package alura.reto.forohub.domain.Topico;
+package alura.reto.forohub.domain;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

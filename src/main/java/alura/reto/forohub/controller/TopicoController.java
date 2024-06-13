@@ -1,7 +1,7 @@
 package alura.reto.forohub.controller;
 
 
-import alura.reto.forohub.domain.Topico.*;
+import alura.reto.forohub.domain.*;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,7 +32,7 @@ public class TopicoController {
         return ResponseEntity.created(url).body(datosRespuestaTopico);
     }
     @GetMapping
-    public ResponseEntity<Page<DatosListadoTopico>> listadoTopics(@PageableDefault(size = 2) Pageable paginacion){
+    public ResponseEntity<Page<DatosListadoTopico>> listadoTopics(@PageableDefault(size = 5) Pageable paginacion){
         return ResponseEntity.ok(topicoRepository.findAll(paginacion).map(DatosListadoTopico::new));
     }
 
