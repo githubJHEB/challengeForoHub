@@ -17,7 +17,7 @@
 
 - [Tecnologías utilizadas](#tecnologías-utilizadas)
 
-- [Api utilizada](#api-utilizada)
+- [Librerias utilizadas](#api-utilizada)
 
 - [Como abrir](#como-abrir)
 
@@ -28,7 +28,11 @@
 
 ## Descripción del proyecto
 <p align="justify">
-Este reto busca poner en práctica la creacion de una API en Spring Boot para crear un aplaicion de un Foro, utiliza diversas librerias que facilitan el proceso de desarrollo, asi como se pone en practica el uso de diferentes herramientes como insomnia, Trello, MySql, WorkBench Sql, ItelliJ IDE CE. 
+Este reto busca poner en práctica la creación de una API en Spring Boot para crear un aplicación de un Foro. Utiliza diversas librerías que facilitan el proceso de desarrollo, así como se pone en práctica el uso de diferentes herramientas como Insomnia, Trello, MySql, WorkBench Sql, ItelliJ IDE CE.
+La API busca ofrecer servicios básicos CRUDE, para el manejo de Tópicos en un Foro.
+La API, provee los servicios de lectura de todos o uno de los tópicos almacenados en la base de datos, la actualización de un tópico, la creación de tópicos, y la eliminación de un tópico en especial.
+Para cada una de las solicitudes de la API se requiere un susuario previamente de autenticado y autorizado, el cual debe estar previamente registrado en la base de datos.
+En dirección del cliente, la API envía como mejor práctica los datos contenidos de cada operación por medio del uso de DTO y se envia al cliente un token JWT como parte de la comunicación entre el servidor y el usuario.
 
 ![Descripción del proyecto. La figura muestra un niño leyendo un libor](xx)
 
@@ -37,40 +41,73 @@ Este reto busca poner en práctica la creacion de una API en Spring Boot para cr
 ## Funcionalidades
 
 <p align="justify">
-Se debe digitar un número que represente la función deseada entre 1 y 7 
+Registro, lectura, actualiazción y eliminación de un tópico.
 </p>
 
-:heavy_check_mark: `Funcionalidad 1:` En construccion.
+:heavy_check_mark: `Funcionalidad 1:` Creación de tópico.
 
-:heavy_check_mark: `Funcionalidad 2:` En construccion.
+:heavy_check_mark: `Funcionalidad 2:` Lectura de uno o todos los tópicos.
 
-:heavy_check_mark: `Funcionalidad 3:` En construccion.
+:heavy_check_mark: `Funcionalidad 3:` Borrado de un tópico.
 
-:heavy_check_mark: `Funcionalidad 4:` En construccion.
+:heavy_check_mark: `Funcionalidad 4:` Actualización de un tópico.
 
-:heavy_check_mark: `Funcionalidad 5:` En construccion .
+heavy_check_mark: `Funcionalidad 5:` Acceso a la API, solo para usuarios registrados en base de datos com autenticación y autorización.
 
-:heavy_check_mark: `Funcionalidad 6:` En construccion.
-
-:heavy_check_mark: `Funcionalidad 7:` En construccion.
 
 ## Tecnologías utilizadas
 <p align="justify">
 Java v 17
 </p>
+
+<p align="justify">
+Spring Boot
+</p>
+
+<p align="justify">
+MySql
+</p>
+
 <p align="justify">
 Affinity Designer.
 </p>
 
-## Api utilizada
+## Librerias utilizadas
 <p align="justify">
-En construccion</p>
+Validación
+</p>
 <p align="justify">
-En construccion</p>
+Spring Boot Starter
+</p>
+<p align="justify">
+Spring Boot devTools
+</p>
+<p align="justify">
+Flywaydb
+</p>
+<p align="justify">
+Spring Boot starter data jpa
+</p>
+<p align="justify">
+Spring Boot Lombok
+</p>
+<p align="justify">
+Spring Boot Security
+</p>
+
+
 
 ## Como abrir
 <p align="justify">
-En construccion
+Haciendo uso de ITelliJ IDEA, agregando la contraseña de la base de datos MYSQL en el campo spring.datasource.password=, asi como el campo api.security.secret=${JWT_SECRET:123456}} (HMAC256), el cual puede ser alamacenado como variable glogal o puede usar el valor por defecto ya mostrado.
+Recomendado utilizar herramienta Imsonia para hacer la pruebas básicas de envío y recepción de respuesta de la API.
+localhost:8080/login para lograr tener el token JWT, el cual deber ser utilizado en el encabezado de la solicitud al servdior junto con usuario y la ocntraseña, la cual debe figurar previamente en la bsae de datos de forma ecriptada
+URL Login: localhost:8080/login
+Alamcenar un Tópico (POST): localhost:8080/topico
+Leer todos los Tópicos (GET): localhost:8080/topico
+Leer un solo Tópico (GET): localhost:8080/topico/id  Donde id es un número Long
+Actualizar un solo Tópico (PUT): localhost:8080/topico/id  Donde id es un número Long
+Borrar un solo Tópico (DELETE): localhost:8080/topico/id  Donde id es un número Long
 </p>
 
 
